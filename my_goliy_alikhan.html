@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игры для девочек</title>
+    <style>
+body {
+  background-image: url("images/bg1.png");
+  background-size: cover;
+  background-position: cover;
+}
+</style>
+</head>
+<body align="center">
+
+<audio id="clickSound">
+  <source src="click.wav" type="audio/mpeg">
+
+</audio>
+
+  <audio id="bgmusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<script>
+let music = document.getElementById("music");
+music.volume = 0.3;
+</script>
+<a href="https://www.youtube.com/shorts/Vnq5xUmr8mk" target=_blank> <img src="images/AZAMATSTORE.png" height="390" alt="AZAMAT STORE" title="Ebaniy azamat" class="pict"> </a>
+<style>
+.pict {
+  position: absolute;
+  left: 750px;
+  top: 50px;
+}
+</style>
+<img id="scene" src="images/img0.jpeg" height="400" width="200" class="pic">
+<style>
+.pic {
+  position: absolute;
+  left: 480px;
+  top: 40px;
+}
+</style>
+<br><br>
+<button id="btn" onclick="nextScene()">Раздеть</button>
+<style>
+#btn {
+  position: absolute;
+  bottom: 10px;
+  left: 57%;
+  background-color: green;
+  color: white;
+}
+</style>
+
+<script>
+
+let currentScene = 0;
+
+let scenes = [
+  {
+    image: "images/img0.jpeg",
+    button: "Раздеть"
+  },
+  {
+    image: "images/img1.jpeg",
+    button: "Сделать пузо"
+  },
+  {
+    image: "images/img2.jpeg",
+    button: "Оскуфеть"
+  },
+  {
+    image: "images/img3.jpeg",
+    button: "УЗКИЕ ДЖИНСЫ"
+  },
+  {
+    image: "images/img4.jpeg",
+    button: "А+А=♥ 🥵🥵🥵"
+  },
+  {
+    image: "images/img5.jpeg",
+    button:""
+  }
+];
+
+function nextScene() {
+  document.getElementById("bgmusic").play();
+  document.getElementById("clickSound").play();
+  currentScene++;
+
+  if (currentScene < scenes.length) {
+
+    document.getElementById("scene").src = scenes[currentScene].image;
+
+    if (scenes[currentScene].button === "") {
+      document.getElementById("btn").style.display = "none";
+    } else {
+      document.getElementById("btn").innerText = scenes[currentScene].button;
+    }
+
+  }
+
+}
+
+</script>
+</body>
+</html>
